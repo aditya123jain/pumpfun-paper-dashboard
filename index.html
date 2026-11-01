@@ -63,7 +63,7 @@ const pct=x=>x==null||isNaN(x)?'–':(x>0?'+':'')+x.toFixed(2)+'%';
 const cls=x=>x>0?'pos':x<0?'neg':'';
 function price(p){if(p==null||isNaN(p))return '–';if(p>=1)return '$'+p.toFixed(4);if(p>=0.01)return '$'+p.toFixed(5);const z=Math.floor(-Math.log10(p));return '$'+p.toFixed(Math.min(z+4,12));}
 function held(h){if(h==null)return '–';const m=Math.round(h*60);return m<60?m+'m':Math.floor(m/60)+'h '+(m%60)+'m';}
-function short(m){return m.slice(0,4)+'…'+m.slice(-4);}
+function short(m){return m.slice(0,6)+'…'+m.slice(-8);}
 function ago(ms){const s=Math.max(0,Math.round(ms/1000));if(s<60)return s+'s ago';if(s<3600)return Math.floor(s/60)+'m '+(s%60)+'s ago';return Math.floor(s/3600)+'h '+Math.floor(s%3600/60)+'m ago';}
 
 function calc(){
